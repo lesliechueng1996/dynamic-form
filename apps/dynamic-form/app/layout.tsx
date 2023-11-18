@@ -1,3 +1,4 @@
+import AppHeader from '../components/AppHeader';
 import './global.css';
 
 export const metadata = {
@@ -11,8 +12,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" data-theme="valentine">
+      <body className="h-screen flex flex-col">
+        <header className="shrink-0">
+          <AppHeader />
+        </header>
+        <main className="grow">{children}</main>
+      </body>
     </html>
   );
 }
